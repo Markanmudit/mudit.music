@@ -104,7 +104,7 @@ async function displayAlbums() {
         
 
         // get the metadata of the folder 
-        let a = await fetch(`/songs/${folder}/info.json`);
+        let a = await fetch(`https://github.com/Markanmudit/mudit.music/songs/${folder}/info.json`);
         let response = await a.json();
         
 
