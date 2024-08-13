@@ -22,7 +22,7 @@ function formatSeconds(totalSeconds) {
 
 async function getSongs(folder) {
     currFolder = folder;
-    let a = await fetch(`/${folder}/`);
+    let a = await fetch(`https://markanmudit.github.io/${folder}/`);
     let response = await a.text();
 
     let div = document.createElement("div");
@@ -81,7 +81,7 @@ const playMusic = (track, pause = false) => {
 
 async function displayAlbums() {
 
-    let a = await fetch(`/songs/`);
+    let a = await fetch(`https://markanmudit.github.io/songs/`);
     let response = await a.text();
 
     let div = document.createElement("div")
@@ -104,7 +104,7 @@ async function displayAlbums() {
         
 
         // get the metadata of the folder 
-        let a = await fetch(`https://github.com/Markanmudit/mudit.music/songs/${folder}/info.json`);
+        let a = await fetch(`https://markanmudit.github.io/songs/${folder}/info.json`);
         let response = await a.json();
         
 
