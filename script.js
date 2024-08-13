@@ -44,14 +44,14 @@ async function getSongs(folder) {
     for (const song of songs) {
         songUL.innerHTML += `
             <li>
-                <img class="invert" src="img/music.svg" alt="">
+                <img class="invert" src="music.svg" alt="">
                 <div class="info">
                     <div>${song.replaceAll("%20", " ")}</div>
                     <div>Artist Name</div>
                 </div>
                 <div class="playnow">
                     <span>Play Now</span>
-                    <img class="invert" src="img/play.svg" alt="">
+                    <img class="invert" src="play.svg" alt="">
                 </div>
             </li>`;
     }
@@ -68,7 +68,7 @@ const playMusic = (track, pause = false) => {
     currentSong.src = `/${currFolder}/` + track;
     if (!pause) {
         currentSong.play();
-        play.src = "img/pause.svg";
+        play.src = "pause.svg";
     }
 
     document.querySelector(".songinfo").textContent = decodeURI(track);
@@ -81,7 +81,7 @@ const playMusic = (track, pause = false) => {
 
 async function displayAlbums() {
 
-    let a = await fetch(`http://127.0.0.1:5501/songs/`);
+    let a = await fetch(`/songs/`);
     let response = await a.text();
 
     let div = document.createElement("div")
@@ -104,7 +104,7 @@ async function displayAlbums() {
         
 
         // get the metadata of the folder 
-        let a = await fetch(`http://127.0.0.1:5501/songs/${folder}/info.json`);
+        let a = await fetch(`/songs/${folder}/info.json`);
         let response = await a.json();
         
 
@@ -158,10 +158,10 @@ async function main() {
     play.addEventListener("click", () => {
         if (currentSong.paused) {
             currentSong.play();
-            play.src = "img/pause.svg";
+            play.src = "pause.svg";
         } else {
             currentSong.pause();
-            play.src = "img/play.svg";
+            play.src = "play.svg";
         }
     });
 
