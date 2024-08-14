@@ -81,7 +81,7 @@ const playMusic = (track, pause = false) => {
 
 async function displayAlbums() {
 
-    let a = await fetch(`/songs/`);
+    let a = await fetch(`http://127.0.0.1:5501/songs/`);
     let response = await a.text();
 
     let div = document.createElement("div")
@@ -104,7 +104,7 @@ async function displayAlbums() {
         
 
         // get the metadata of the folder 
-        let a = await fetch(`/songs/${folder}/info.json`);
+        let a = await fetch(`http://127.0.0.1:5501/songs/${folder}/info.json`);
         let response = await a.json();
         
 
