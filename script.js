@@ -81,7 +81,7 @@ const playMusic = (track, pause = false) => {
 
 async function displayAlbums() {
 
-    let a = await fetch(`http://127.0.0.1:5501/songs/`);
+    let a = await fetch(`http://127.0.0.1:5501/songs/cs`);
     let response = await a.text();
 
     let div = document.createElement("div")
@@ -118,7 +118,7 @@ async function displayAlbums() {
                                     fill="currentColor" />
                             </svg>
                         </div>
-                        <img src="/songs/${folder}/cover.jpeg"
+                        <img src="/songs/cs/cover.jpeg"
                             alt="">
                         <h2>${response.title}</h2>
                         <p>${response.description}</p>
